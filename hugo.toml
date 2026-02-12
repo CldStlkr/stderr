@@ -1,0 +1,22 @@
+baseURL = 'https://yoursite.com/'
+languageCode = 'en-us'
+title = 'stderr'
+theme = 'PaperMod'
+
+[params]
+description = "Systems programming, low-level adventures, figuring stuff out"
+author = "Neel"
+
+[params.homeInfoParams]
+Title = "Hi, Im Neel"
+Content = "I write about systems programming and other stuff"
+
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 2

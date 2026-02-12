@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>First Contribution to Zig: Implementing insque() and remque() | stderr</title>
+<meta name="keywords" content="zig, open-source, systems-programming">
+<meta name="description" content="I recently made my first contribution to the Zig programming language by implementing
+insque() and remque() - two doubly-linked list functions from the C standard
+library.
+What are insque and remque?
+These are classic C functions for manipulating doubly-linked lists&hellip;
+The Journey
+Initial Setup
+Getting started was trickier than expected&hellip;
+The Implementation
+[Talk about translating from C to Zig, understanding the Node struct, etc.]
+Build Issues
+[The fun parts - version mismatches, merge conflicts, CI failures]">
+<meta name="author" content="Neel">
+<link rel="canonical" href="https://yoursite.com/posts/zig-first-contribution/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://yoursite.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://yoursite.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://yoursite.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://yoursite.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://yoursite.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://yoursite.com/posts/zig-first-contribution/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://yoursite.com/posts/zig-first-contribution/">
+  <meta property="og:site_name" content="stderr">
+  <meta property="og:title" content="First Contribution to Zig: Implementing insque() and remque()">
+  <meta property="og:description" content="I recently made my first contribution to the Zig programming language by implementing insque() and remque() - two doubly-linked list functions from the C standard library.
+What are insque and remque? These are classic C functions for manipulating doubly-linked lists…
+The Journey Initial Setup Getting started was trickier than expected…
+The Implementation [Talk about translating from C to Zig, understanding the Node struct, etc.]
+Build Issues [The fun parts - version mismatches, merge conflicts, CI failures]">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-12T00:00:00+00:00">
+    <meta property="article:tag" content="Zig">
+    <meta property="article:tag" content="Open-Source">
+    <meta property="article:tag" content="Systems-Programming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="First Contribution to Zig: Implementing insque() and remque()">
+<meta name="twitter:description" content="I recently made my first contribution to the Zig programming language by implementing
+insque() and remque() - two doubly-linked list functions from the C standard
+library.
+What are insque and remque?
+These are classic C functions for manipulating doubly-linked lists&hellip;
+The Journey
+Initial Setup
+Getting started was trickier than expected&hellip;
+The Implementation
+[Talk about translating from C to Zig, understanding the Node struct, etc.]
+Build Issues
+[The fun parts - version mismatches, merge conflicts, CI failures]">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://yoursite.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "First Contribution to Zig: Implementing insque() and remque()",
+      "item": "https://yoursite.com/posts/zig-first-contribution/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "First Contribution to Zig: Implementing insque() and remque()",
+  "name": "First Contribution to Zig: Implementing insque() and remque()",
+  "description": "I recently made my first contribution to the Zig programming language by implementing insque() and remque() - two doubly-linked list functions from the C standard library.\nWhat are insque and remque? These are classic C functions for manipulating doubly-linked lists\u0026hellip;\nThe Journey Initial Setup Getting started was trickier than expected\u0026hellip;\nThe Implementation [Talk about translating from C to Zig, understanding the Node struct, etc.]\nBuild Issues [The fun parts - version mismatches, merge conflicts, CI failures]\n",
+  "keywords": [
+    "zig", "open-source", "systems-programming"
+  ],
+  "articleBody": "I recently made my first contribution to the Zig programming language by implementing insque() and remque() - two doubly-linked list functions from the C standard library.\nWhat are insque and remque? These are classic C functions for manipulating doubly-linked lists…\nThe Journey Initial Setup Getting started was trickier than expected…\nThe Implementation [Talk about translating from C to Zig, understanding the Node struct, etc.]\nBuild Issues [The fun parts - version mismatches, merge conflicts, CI failures]\nWhat I Learned How Zig’s build system works The importance of reading existing code patterns [etc.] Links My PR Issue #30978 ",
+  "wordCount" : "97",
+  "inLanguage": "en",
+  "datePublished": "2026-02-12T00:00:00Z",
+  "dateModified": "2026-02-12T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Neel"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yoursite.com/posts/zig-first-contribution/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "stderr",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yoursite.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://yoursite.com/" accesskey="h" title="stderr (Alt + H)">stderr</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://yoursite.com/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://yoursite.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      First Contribution to Zig: Implementing insque() and remque()
+    </h1>
+    <div class="post-meta"><span title='2026-02-12 00:00:00 +0000 UTC'>February 12, 2026</span>&nbsp;·&nbsp;<span>Neel</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>I recently made my first contribution to the Zig programming language by implementing
+<code>insque()</code> and <code>remque()</code> - two doubly-linked list functions from the C standard
+library.</p>
+<h2 id="what-are-insque-and-remque">What are insque and remque?<a hidden class="anchor" aria-hidden="true" href="#what-are-insque-and-remque">#</a></h2>
+<p>These are classic C functions for manipulating doubly-linked lists&hellip;</p>
+<h2 id="the-journey">The Journey<a hidden class="anchor" aria-hidden="true" href="#the-journey">#</a></h2>
+<h3 id="initial-setup">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup">#</a></h3>
+<p>Getting started was trickier than expected&hellip;</p>
+<h3 id="the-implementation">The Implementation<a hidden class="anchor" aria-hidden="true" href="#the-implementation">#</a></h3>
+<p>[Talk about translating from C to Zig, understanding the Node struct, etc.]</p>
+<h3 id="build-issues">Build Issues<a hidden class="anchor" aria-hidden="true" href="#build-issues">#</a></h3>
+<p>[The fun parts - version mismatches, merge conflicts, CI failures]</p>
+<h2 id="what-i-learned">What I Learned<a hidden class="anchor" aria-hidden="true" href="#what-i-learned">#</a></h2>
+<ul>
+<li>How Zig&rsquo;s build system works</li>
+<li>The importance of reading existing code patterns</li>
+<li>[etc.]</li>
+</ul>
+<h2 id="links">Links<a hidden class="anchor" aria-hidden="true" href="#links">#</a></h2>
+<ul>
+<li><a href="https://codeberg.org/ziglang/zig/pulls/31185">My PR</a></li>
+<li><a href="https://codeberg.org/ziglang/zig/issues/30978">Issue #30978</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://yoursite.com/tags/zig/">Zig</a></li>
+      <li><a href="https://yoursite.com/tags/open-source/">Open-Source</a></li>
+      <li><a href="https://yoursite.com/tags/systems-programming/">Systems-Programming</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://yoursite.com/">stderr</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

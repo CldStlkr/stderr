@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Zig on stderr</title>
+    <link>https://yoursite.com/tags/zig/</link>
+    <description>Recent content in Zig on stderr</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yoursite.com/tags/zig/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Contribution to Zig: Implementing insque() and remque()</title>
+      <link>https://yoursite.com/posts/zig-first-contribution/</link>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yoursite.com/posts/zig-first-contribution/</guid>
+      <description>&lt;p&gt;I recently made my first contribution to the Zig programming language by implementing
+&lt;code&gt;insque()&lt;/code&gt; and &lt;code&gt;remque()&lt;/code&gt; - two doubly-linked list functions from the C standard
+library.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-insque-and-remque&#34;&gt;What are insque and remque?&lt;/h2&gt;
+&lt;p&gt;These are classic C functions for manipulating doubly-linked lists&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;the-journey&#34;&gt;The Journey&lt;/h2&gt;
+&lt;h3 id=&#34;initial-setup&#34;&gt;Initial Setup&lt;/h3&gt;
+&lt;p&gt;Getting started was trickier than expected&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;the-implementation&#34;&gt;The Implementation&lt;/h3&gt;
+&lt;p&gt;[Talk about translating from C to Zig, understanding the Node struct, etc.]&lt;/p&gt;
+&lt;h3 id=&#34;build-issues&#34;&gt;Build Issues&lt;/h3&gt;
+&lt;p&gt;[The fun parts - version mismatches, merge conflicts, CI failures]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
