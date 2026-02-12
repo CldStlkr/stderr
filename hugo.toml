@@ -1,6 +1,6 @@
-baseURL = 'https://yoursite.com/'
+baseURL = 'https://stderr.me/'
 languageCode = 'en-us'
-title = 'stderr'
+title = 'stderr.me'
 theme = 'PaperMod'
 
 [params]
