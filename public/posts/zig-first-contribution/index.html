@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>First Contribution to Zig: Implementing insque() and remque() | stderr</title>
+<meta name="robots" content="noindex, nofollow">
+<title>My First Contribution to Zig: Implementing insque() and remque() | stderr.me</title>
 <meta name="keywords" content="zig, open-source, systems-programming">
 <meta name="description" content="I recently made my first contribution to the Zig programming language by implementing
-insque() and remque() - two doubly-linked list functions from the C standard
+insque() and remque(), two doubly-linked list functions from the C standard
 library.
 What are insque and remque?
-These are classic C functions for manipulating doubly-linked lists&hellip;
-The Journey
-Initial Setup
-Getting started was trickier than expected&hellip;
-The Implementation
-[Talk about translating from C to Zig, understanding the Node struct, etc.]
-Build Issues
-[The fun parts - version mismatches, merge conflicts, CI failures]">
+These functions are used to insert and remove from queues built from doubly-linked
+lists, with the function signatures below:
+void insque(void *element, void *pred);
+void remque(void *element);
+Their implementations were surprisingly simple, just involving casting pointers
+into node
+structs and hooking up the new node to its neighbors or the opposite if removing,
+which is why I chose this to be my first contribution.">
 <meta name="author" content="Neel">
-<link rel="canonical" href="https://yoursite.com/posts/zig-first-contribution/">
+<link rel="canonical" href="http://localhost:1313/posts/zig-first-contribution/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://yoursite.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://yoursite.com/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://yoursite.com/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://yoursite.com/apple-touch-icon.png">
-<link rel="mask-icon" href="https://yoursite.com/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://yoursite.com/posts/zig-first-contribution/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/zig-first-contribution/">
 <noscript>
     <style>
         #theme-toggle,
@@ -81,97 +81,13 @@ Build Issues
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://yoursite.com/posts/zig-first-contribution/">
-  <meta property="og:site_name" content="stderr">
-  <meta property="og:title" content="First Contribution to Zig: Implementing insque() and remque()">
-  <meta property="og:description" content="I recently made my first contribution to the Zig programming language by implementing insque() and remque() - two doubly-linked list functions from the C standard library.
-What are insque and remque? These are classic C functions for manipulating doubly-linked lists…
-The Journey Initial Setup Getting started was trickier than expected…
-The Implementation [Talk about translating from C to Zig, understanding the Node struct, etc.]
-Build Issues [The fun parts - version mismatches, merge conflicts, CI failures]">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-02-12T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-02-12T00:00:00+00:00">
-    <meta property="article:tag" content="Zig">
-    <meta property="article:tag" content="Open-Source">
-    <meta property="article:tag" content="Systems-Programming">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First Contribution to Zig: Implementing insque() and remque()">
-<meta name="twitter:description" content="I recently made my first contribution to the Zig programming language by implementing
-insque() and remque() - two doubly-linked list functions from the C standard
-library.
-What are insque and remque?
-These are classic C functions for manipulating doubly-linked lists&hellip;
-The Journey
-Initial Setup
-Getting started was trickier than expected&hellip;
-The Implementation
-[Talk about translating from C to Zig, understanding the Node struct, etc.]
-Build Issues
-[The fun parts - version mismatches, merge conflicts, CI failures]">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://yoursite.com/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "First Contribution to Zig: Implementing insque() and remque()",
-      "item": "https://yoursite.com/posts/zig-first-contribution/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "First Contribution to Zig: Implementing insque() and remque()",
-  "name": "First Contribution to Zig: Implementing insque() and remque()",
-  "description": "I recently made my first contribution to the Zig programming language by implementing insque() and remque() - two doubly-linked list functions from the C standard library.\nWhat are insque and remque? These are classic C functions for manipulating doubly-linked lists\u0026hellip;\nThe Journey Initial Setup Getting started was trickier than expected\u0026hellip;\nThe Implementation [Talk about translating from C to Zig, understanding the Node struct, etc.]\nBuild Issues [The fun parts - version mismatches, merge conflicts, CI failures]\n",
-  "keywords": [
-    "zig", "open-source", "systems-programming"
-  ],
-  "articleBody": "I recently made my first contribution to the Zig programming language by implementing insque() and remque() - two doubly-linked list functions from the C standard library.\nWhat are insque and remque? These are classic C functions for manipulating doubly-linked lists…\nThe Journey Initial Setup Getting started was trickier than expected…\nThe Implementation [Talk about translating from C to Zig, understanding the Node struct, etc.]\nBuild Issues [The fun parts - version mismatches, merge conflicts, CI failures]\nWhat I Learned How Zig’s build system works The importance of reading existing code patterns [etc.] Links My PR Issue #30978 ",
-  "wordCount" : "97",
-  "inLanguage": "en",
-  "datePublished": "2026-02-12T00:00:00Z",
-  "dateModified": "2026-02-12T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Neel"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://yoursite.com/posts/zig-first-contribution/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "stderr",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://yoursite.com/favicon.ico"
-    }
-  }
-}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://yoursite.com/" accesskey="h" title="stderr (Alt + H)">stderr</a>
+            <a href="http://localhost:1313/" accesskey="h" title="stderr.me (Alt + H)">stderr.me</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -197,12 +113,12 @@ Build Issues
         </div>
         <ul id="menu">
             <li>
-                <a href="https://yoursite.com/posts/" title="Posts">
+                <a href="http://localhost:1313/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://yoursite.com/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
@@ -215,30 +131,162 @@ Build Issues
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      First Contribution to Zig: Implementing insque() and remque()
+      My First Contribution to Zig: Implementing insque() and remque()
     </h1>
-    <div class="post-meta"><span title='2026-02-12 00:00:00 +0000 UTC'>February 12, 2026</span>&nbsp;·&nbsp;<span>Neel</span>
+    <div class="post-meta"><span>6 min</span>&nbsp;·&nbsp;<span>Neel</span>
 
 </div>
   </header> 
   <div class="post-content"><p>I recently made my first contribution to the Zig programming language by implementing
-<code>insque()</code> and <code>remque()</code> - two doubly-linked list functions from the C standard
+<code>insque()</code> and <code>remque()</code>, two doubly-linked list functions from the C standard
 library.</p>
 <h2 id="what-are-insque-and-remque">What are insque and remque?<a hidden class="anchor" aria-hidden="true" href="#what-are-insque-and-remque">#</a></h2>
-<p>These are classic C functions for manipulating doubly-linked lists&hellip;</p>
+<p>These functions are used to insert and remove from queues built from doubly-linked
+lists, with the function signatures below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">insque</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>element, <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>pred);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">remque</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>element);
+</span></span></code></pre></div><p>Their implementations were surprisingly simple, just involving casting pointers
+into <code>node</code><br>
+structs and hooking up the new node to its neighbors or the opposite if removing,
+which is why I chose this to be my first contribution.</p>
 <h2 id="the-journey">The Journey<a hidden class="anchor" aria-hidden="true" href="#the-journey">#</a></h2>
 <h3 id="initial-setup">Initial Setup<a hidden class="anchor" aria-hidden="true" href="#initial-setup">#</a></h3>
-<p>Getting started was trickier than expected&hellip;</p>
+<p>Setup was fairly easy, though there were some hiccups after finishing the implementation
+that I will elaborate on later</p>
+<p>All I needed was to fork the Zig project from Codeberg and look at the Zig implementations
+of other headers like <code>string.zig</code> to get an idea of what to change.</p>
 <h3 id="the-implementation">The Implementation<a hidden class="anchor" aria-hidden="true" href="#the-implementation">#</a></h3>
-<p>[Talk about translating from C to Zig, understanding the Node struct, etc.]</p>
+<p>Like I said before, the implementation in C was so simple I almost couldn&rsquo;t
+believe it. This may be in large part to having written an RTOS kernel in C,
+of which a central component is the intrusive doubly-linked
+lists that are embedded into my Task Control Blocks.</p>
+<p>All this to say, that I still had a somewhat difficult time translating my the C
+code into idiomatic Zig code. Specifically, the <code>insque()</code> logic.</p>
+<p>The below code is the entirely of the <code>insque()</code> musl implementation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;search.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> node {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>next;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>prev;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">insque</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>element, <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>pred) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>e <span style="color:#f92672">=</span> element;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> pred;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>p) {
+</span></span><span style="display:flex;"><span>    e<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> e<span style="color:#f92672">-&gt;</span>prev <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  e<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+</span></span><span style="display:flex;"><span>  e<span style="color:#f92672">-&gt;</span>prev <span style="color:#f92672">=</span> p;
+</span></span><span style="display:flex;"><span>  p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> e;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">-&gt;</span>next)
+</span></span><span style="display:flex;"><span>    e<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prev <span style="color:#f92672">=</span> e;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Its extremely straightforward, with a node definition and <code>void *</code> as the type
+for the function args <code>element</code> and <code>pred</code>, which is short for predecessor.</p>
+<p>From there, the two void pointers are cast to node pointers, and then there
+is a check for if <code>p</code> (the node-casted value of <code>pred</code>) is null, in which case
+we null the next and previous node pointers for <code>e</code>, since if it has no
+predecessor, it must be the the only value in the list.</p>
+<p>Once null <code>p</code> is accounted for, we can simply hook up the pointers accordingly,
+accounting for if <code>p</code> was not the last node, and would therefore have a
+next node that would now need to be the next node of <code>e</code> instead</p>
+<p>In contrast, here is my full implementation of the Zig equivalent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> std <span style="color:#f92672">=</span> @import(<span style="color:#e6db74">&#34;std&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> builtin <span style="color:#f92672">=</span> @import(<span style="color:#e6db74">&#34;builtin&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> symbol <span style="color:#f92672">=</span> @import(<span style="color:#e6db74">&#34;../c.zig&#34;</span>).symbol;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">comptime</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (builtin.target.<span style="color:#a6e22e">isMuslLibC</span>() <span style="color:#66d9ef">or</span> builtin.target.<span style="color:#a6e22e">isWasiLibC</span>()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">symbol</span>(<span style="color:#f92672">&amp;</span>insque, <span style="color:#e6db74">&#34;insque&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">symbol</span>(<span style="color:#f92672">&amp;</span>remque, <span style="color:#e6db74">&#34;remque&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> Node <span style="color:#f92672">=</span> <span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  next<span style="color:#f92672">:</span> <span style="color:#f92672">?*</span>Node,
+</span></span><span style="display:flex;"><span>  prev<span style="color:#f92672">:</span> <span style="color:#f92672">?*</span>Node,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">insque</span>(element<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>anyopaque, pred<span style="color:#f92672">:</span> <span style="color:#f92672">?*</span>anyopaque) <span style="color:#a6e22e">callconv</span>(.c) <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> e<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>Node <span style="color:#f92672">=</span> @ptrCast(@alignCast(element));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (pred) <span style="color:#f92672">|</span>p_ptr<span style="color:#f92672">|</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> p<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>Node <span style="color:#f92672">=</span> @ptrCast(@alignCast(p_ptr));
+</span></span><span style="display:flex;"><span>    e.next <span style="color:#f92672">=</span> p.next;
+</span></span><span style="display:flex;"><span>    e.prev <span style="color:#f92672">=</span> p;
+</span></span><span style="display:flex;"><span>    p.next <span style="color:#f92672">=</span> e;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (e.next) <span style="color:#f92672">|</span>next<span style="color:#f92672">|</span> {
+</span></span><span style="display:flex;"><span>      next.prev <span style="color:#f92672">=</span> e;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      e.next <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>      e.prev <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>First, you can see that I needed to tell the Zig compiler when building for musl
+or wasi, export these two functions (with their original C names) so that they can
+be callable from C code. The symbol() function handles all the @export boilerplate
+that allows them to be a part of the public C API.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (builtin.target.<span style="color:#a6e22e">isMuslLibC</span>() <span style="color:#66d9ef">or</span> builtin.target.<span style="color:#a6e22e">isWasiLibC</span>()) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">symbol</span>(<span style="color:#f92672">&amp;</span>insque, <span style="color:#e6db74">&#34;insque&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">symbol</span>(<span style="color:#f92672">&amp;</span>remque, <span style="color:#e6db74">&#34;remque&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For similar reasons, I also needed to create the <code>Node</code> struct as extern, so that
+it is also compatible with the C ABI (Different than API! ABI defines how data
+is laid out in memory and how functions are called, while API is just the
+interface you code with/against (function signatures, etc)).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> Node <span style="color:#f92672">=</span> <span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  next<span style="color:#f92672">:</span> <span style="color:#f92672">?*</span>Node,
+</span></span><span style="display:flex;"><span>  prev<span style="color:#f92672">:</span> <span style="color:#f92672">?*</span>Node,
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><code>*anyopaque</code> is Zig&rsquo;s equivalent to C&rsquo;s <code>void *</code>; It&rsquo;s an opaque pointer to any
+type. Zig, similar to Rust, supports Optionals through the use of the <code>?</code>
+syntax. We use it for the <code>pred</code> pointer because it is possible for
+that to be validly null. the <code>callconv(.c)</code> as the return value ensures we
+use the C ABI, which makes it compatible with C code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">insque</span>(element<span style="color:#f92672">:</span> <span style="color:#f92672">*</span>anyopaque, pred<span style="color:#f92672">:</span> <span style="color:#f92672">?*</span>anyopaque) <span style="color:#a6e22e">callconv</span>(.c) <span style="color:#66d9ef">void</span>
+</span></span></code></pre></div><p>Since we receive generic pointers, we need to cast them to the concrete <code>*Node</code>
+type so that we can access the <code>next</code> and <code>prev</code> fields. <code>@ptrCast</code> changes the
+pointer type, while <code>@alignCast</code> tells Zig to trust that the pointer has
+the correct alignment for a <code>Node</code> struct.</p>
+<p>Understanding those intricacies was ~80% of the difficulty, and the other 20%
+came from my unfamiliarity with how to unwrap optional values in Zig.
+In Rust, there are many ways to unwrap an optional, with the simplest being
+<code>.unwrap()</code>. The analog for this in Zig is <code>.?</code>, but this would panic upon
+reaching a null value in both languages. I had to look up the documentation for
+how I could do the equivalent of <code>if let Some(ptr) = ...</code> in Zig, which turned
+out to be <code>if (p) |p_ptr| {...}</code></p>
 <h3 id="build-issues">Build Issues<a hidden class="anchor" aria-hidden="true" href="#build-issues">#</a></h3>
-<p>[The fun parts - version mismatches, merge conflicts, CI failures]</p>
-<h2 id="what-i-learned">What I Learned<a hidden class="anchor" aria-hidden="true" href="#what-i-learned">#</a></h2>
+<p>I don&rsquo;t want to bog you down with my trials and tribulations of figuring out how
+to compile and test the entire project so I will try to keep it short.</p>
+<p>In summary I could not get my version
+of Zig (Some dev build of 0.16.x) to compile and test my changes, so I had to
+build using C and cmake which took a pretty long time even with make -j$(nproc)
+using all 12 cores of my CPU.</p>
+<p>Then, after ensuring my changes passed the test suite,
+I submitted my PR and within 15 minutes got 3 different comments on what I needed
+to change in my code, which I spent a bit trying to fix and then realizing that
+I had merge conflicts and was adding unnecessary changes leading me down a rabbit
+hole of making 4+ commits to my PR changing 1-10 lines at a time. Not a good look.</p>
+<h2 id="lessons-learned">Lessons Learned<a hidden class="anchor" aria-hidden="true" href="#lessons-learned">#</a></h2>
 <ul>
 <li>How Zig&rsquo;s build system works</li>
-<li>The importance of reading existing code patterns</li>
-<li>[etc.]</li>
+<li>The confidence to navigate professional Zig and C code</li>
+<li>Building a programming language from source takes a very long time</li>
 </ul>
+<h2 id="future-contribution-plans">Future Contribution Plans<a hidden class="anchor" aria-hidden="true" href="#future-contribution-plans">#</a></h2>
+<p>I plan to contribute more, probably staying with the same issue, rewriting C functions
+into Zig, since it gives me experience with reading professional C code and
+mapping it to
+idiomatic Zig. Eventually, I hope to branch out to more complicated stuff, but
+for now, I&rsquo;ll
+stick to small-scope issues like this until I can understand the black magic
+syntax that is used
+everywhere else in the Zig code base</p>
 <h2 id="links">Links<a hidden class="anchor" aria-hidden="true" href="#links">#</a></h2>
 <ul>
 <li><a href="https://codeberg.org/ziglang/zig/pulls/31185">My PR</a></li>
@@ -250,16 +298,16 @@ library.</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://yoursite.com/tags/zig/">Zig</a></li>
-      <li><a href="https://yoursite.com/tags/open-source/">Open-Source</a></li>
-      <li><a href="https://yoursite.com/tags/systems-programming/">Systems-Programming</a></li>
+      <li><a href="http://localhost:1313/tags/zig/">Zig</a></li>
+      <li><a href="http://localhost:1313/tags/open-source/">Open-Source</a></li>
+      <li><a href="http://localhost:1313/tags/systems-programming/">Systems-Programming</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://yoursite.com/">stderr</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">stderr.me</a></span> · 
 
     <span>
         Powered by

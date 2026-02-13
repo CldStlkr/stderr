@@ -1,30 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>stderr</title>
-    <link>https://yoursite.com/</link>
-    <description>Recent content on stderr</description>
+    <title>stderr.me</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on stderr.me</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://yoursite.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First Contribution to Zig: Implementing insque() and remque()</title>
-      <link>https://yoursite.com/posts/zig-first-contribution/</link>
-      <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://yoursite.com/posts/zig-first-contribution/</guid>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m a software engineer currently working on healthcare data systems at the NIH.&lt;/p&gt;
+&lt;p&gt;I write about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Systems programming (C, C++, Rust, Zig)&lt;/li&gt;
+&lt;li&gt;Graphics programming (CUDA, ray tracing)&lt;/li&gt;
+&lt;li&gt;Open source contributions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other things in my life:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My dog Java&lt;/li&gt;
+&lt;li&gt;Training for the Ragnar Relay at Zion National Park&lt;/li&gt;
+&lt;li&gt;Calisthenics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/CldStlkr/morph-rt&#34;&gt;Custom RTOS in C&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/CldStlkr/cuda-raytracer&#34;&gt;CUDA Ray Tracer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/CldStlkr/moji&#34;&gt;Multiplayer Kanji Game&lt;/a&gt; | &lt;a href=&#34;https://moji.fly.dev/&#34;&gt;Live Site&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Find me on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/CldStlkr&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codeberg.org/ntamtam&#34;&gt;Codeberg&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>My First Contribution to Zig: Implementing insque() and remque()</title>
+      <link>http://localhost:1313/posts/zig-first-contribution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/zig-first-contribution/</guid>
       <description>&lt;p&gt;I recently made my first contribution to the Zig programming language by implementing
-&lt;code&gt;insque()&lt;/code&gt; and &lt;code&gt;remque()&lt;/code&gt; - two doubly-linked list functions from the C standard
+&lt;code&gt;insque()&lt;/code&gt; and &lt;code&gt;remque()&lt;/code&gt;, two doubly-linked list functions from the C standard
 library.&lt;/p&gt;
 &lt;h2 id=&#34;what-are-insque-and-remque&#34;&gt;What are insque and remque?&lt;/h2&gt;
-&lt;p&gt;These are classic C functions for manipulating doubly-linked lists&amp;hellip;&lt;/p&gt;
-&lt;h2 id=&#34;the-journey&#34;&gt;The Journey&lt;/h2&gt;
-&lt;h3 id=&#34;initial-setup&#34;&gt;Initial Setup&lt;/h3&gt;
-&lt;p&gt;Getting started was trickier than expected&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;the-implementation&#34;&gt;The Implementation&lt;/h3&gt;
-&lt;p&gt;[Talk about translating from C to Zig, understanding the Node struct, etc.]&lt;/p&gt;
-&lt;h3 id=&#34;build-issues&#34;&gt;Build Issues&lt;/h3&gt;
-&lt;p&gt;[The fun parts - version mismatches, merge conflicts, CI failures]&lt;/p&gt;</description>
+&lt;p&gt;These functions are used to insert and remove from queues built from doubly-linked
+lists, with the function signatures below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;insque&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;element, &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;pred);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;remque&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;element);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Their implementations were surprisingly simple, just involving casting pointers
+into &lt;code&gt;node&lt;/code&gt;&lt;br&gt;
+structs and hooking up the new node to its neighbors or the opposite if removing,
+which is why I chose this to be my first contribution.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

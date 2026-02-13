@@ -2,27 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://yoursite.com/posts/zig-first-contribution/</loc>
+    <loc>http://localhost:1313/posts/zig-first-contribution/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yoursite.com/tags/open-source/</loc>
+    <loc>http://localhost:1313/tags/open-source/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yoursite.com/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yoursite.com/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yoursite.com/tags/systems-programming/</loc>
+    <loc>http://localhost:1313/tags/systems-programming/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yoursite.com/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yoursite.com/tags/zig/</loc>
+    <loc>http://localhost:1313/tags/zig/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yoursite.com/categories/</loc>
+    <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

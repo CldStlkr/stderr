@@ -8,8 +8,8 @@ description = "Systems programming, low-level adventures, figuring stuff out"
 author = "Neel"
 
 [params.homeInfoParams]
-Title = "Hi, Im Neel"
-Content = "I write about systems programming and other stuff"
+Title = "Hi, I'm Neel"
+Content = "This is a log of my adventures in systems programming and other development stuff"
 
 [[menu.main]]
 name = "Posts"

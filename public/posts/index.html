@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Posts | stderr</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Posts | stderr.me</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - stderr">
+<meta name="description" content="Posts - stderr.me">
 <meta name="author" content="Neel">
-<link rel="canonical" href="https://yoursite.com/posts/">
+<link rel="canonical" href="http://localhost:1313/posts/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://yoursite.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://yoursite.com/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://yoursite.com/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://yoursite.com/apple-touch-icon.png">
-<link rel="mask-icon" href="https://yoursite.com/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://yoursite.com/posts/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://yoursite.com/posts/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
 <noscript>
     <style>
         #theme-toggle,
@@ -71,37 +71,13 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://yoursite.com/posts/">
-  <meta property="og:site_name" content="stderr">
-  <meta property="og:title" content="Posts">
-  <meta property="og:description" content="Systems programming, low-level adventures, figuring stuff out">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="Systems programming, low-level adventures, figuring stuff out">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://yoursite.com/posts/"
-    }
-  ]
-}
 </script>
 </head>
 <body class="list" id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://yoursite.com/" accesskey="h" title="stderr (Alt + H)">stderr</a>
+            <a href="http://localhost:1313/" accesskey="h" title="stderr.me (Alt + H)">stderr.me</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -127,12 +103,12 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://yoursite.com/posts/" title="Posts">
+                <a href="http://localhost:1313/posts/" title="Posts">
                     <span class="active">Posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://yoursite.com/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
@@ -148,24 +124,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">First Contribution to Zig: Implementing insque() and remque()
+    <h2 class="entry-hint-parent">My First Contribution to Zig: Implementing insque() and remque()
     </h2>
   </header>
   <div class="entry-content">
-    <p>I recently made my first contribution to the Zig programming language by implementing insque() and remque() - two doubly-linked list functions from the C standard library.
-What are insque and remque? These are classic C functions for manipulating doubly-linked lists…
-The Journey Initial Setup Getting started was trickier than expected…
-The Implementation [Talk about translating from C to Zig, understanding the Node struct, etc.]
-Build Issues [The fun parts - version mismatches, merge conflicts, CI failures]
+    <p>I recently made my first contribution to the Zig programming language by implementing insque() and remque(), two doubly-linked list functions from the C standard library.
+What are insque and remque? These functions are used to insert and remove from queues built from doubly-linked lists, with the function signatures below:
+void insque(void *element, void *pred); void remque(void *element); Their implementations were surprisingly simple, just involving casting pointers into node
+structs and hooking up the new node to its neighbors or the opposite if removing, which is why I chose this to be my first contribution.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-02-12 00:00:00 +0000 UTC'>February 12, 2026</span>&nbsp;·&nbsp;<span>Neel</span></footer>
-  <a class="entry-link" aria-label="post link to First Contribution to Zig: Implementing insque() and remque()" href="https://yoursite.com/posts/zig-first-contribution/"></a>
+  <footer class="entry-footer"><span>6 min</span>&nbsp;·&nbsp;<span>Neel</span></footer>
+  <a class="entry-link" aria-label="post link to My First Contribution to Zig: Implementing insque() and remque()" href="http://localhost:1313/posts/zig-first-contribution/"></a>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://yoursite.com/">stderr</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">stderr.me</a></span> · 
 
     <span>
         Powered by
