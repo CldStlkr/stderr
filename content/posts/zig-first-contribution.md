@@ -3,6 +3,7 @@ title = "My First Contribution to Zig: Implementing insque() and remque()"
 draft = false
 tags = ["zig", "open-source", "systems-programming"]
 ShowReadingTime = true
+date = 2026-02-12
 +++
 
 I recently made my first contribution to the Zig programming language by implementing

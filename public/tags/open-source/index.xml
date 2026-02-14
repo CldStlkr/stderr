@@ -14,17 +14,17 @@
       <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/zig-first-contribution/</guid>
       <description>&lt;p&gt;I recently made my first contribution to the Zig programming language by implementing
-&lt;code&gt;insque()&lt;/code&gt; and &lt;code&gt;remque()&lt;/code&gt; - two doubly-linked list functions from the C standard
+&lt;code&gt;insque()&lt;/code&gt; and &lt;code&gt;remque()&lt;/code&gt;, two doubly-linked list functions from the C standard
 library.&lt;/p&gt;
 &lt;h2 id=&#34;what-are-insque-and-remque&#34;&gt;What are insque and remque?&lt;/h2&gt;
-&lt;p&gt;These are classic C functions for manipulating doubly-linked lists&amp;hellip;&lt;/p&gt;
-&lt;h2 id=&#34;the-journey&#34;&gt;The Journey&lt;/h2&gt;
-&lt;h3 id=&#34;initial-setup&#34;&gt;Initial Setup&lt;/h3&gt;
-&lt;p&gt;Getting started was trickier than expected&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;the-implementation&#34;&gt;The Implementation&lt;/h3&gt;
-&lt;p&gt;[Talk about translating from C to Zig, understanding the Node struct, etc.]&lt;/p&gt;
-&lt;h3 id=&#34;build-issues&#34;&gt;Build Issues&lt;/h3&gt;
-&lt;p&gt;[The fun parts - version mismatches, merge conflicts, CI failures]&lt;/p&gt;</description>
+&lt;p&gt;These functions are used to insert and remove from queues built from doubly-linked
+lists, with the function signatures below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;insque&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;element, &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;pred);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;remque&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;element);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Their implementations were surprisingly simple, just involving casting pointers
+into &lt;code&gt;node&lt;/code&gt;&lt;br&gt;
+structs and hooking up the new node to its neighbors or the opposite if removing,
+which is why I chose this to be my first contribution.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
