@@ -2,22 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/arm-assembly/</loc>
+    <lastmod>2026-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/arm-cortex-m4/</loc>
+    <lastmod>2026-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/c/</loc>
+    <lastmod>2026-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rtos/</loc>
+    <lastmod>2026-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/rtos-context-switching/</loc>
+    <lastmod>2026-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pages/arm-assembly-reference/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pages/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/zig-first-contribution/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/open-source/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/systems-programming/</loc>
-    <lastmod>2026-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/zig/</loc>
